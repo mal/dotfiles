@@ -70,7 +70,7 @@ updateDotfiles() {
     if [ -f install.log ]; then
         local previous=$(($(stat install.log -c %Y) / 86400))
         local today=$(($(date +%s) / 86400))
-        [ $today -le $previous ] && return;
+        [ $today -le $previous ] && return 1;
     fi
 
     if [ -d $dotfiles_loc/.git ] && [ `which git` ]; then
@@ -84,8 +84,9 @@ updateDotfiles() {
 # Catch update action, and update the dotfiles from origin
 # -----------------------------------------------------------------
 if [ "$remove" = "update" ]; then
-    updateDotfiles
-    exit 0
+    if ! updateDotfiles; then
+        exit 0
+    fi
 fi
 
 # Links all the dotfiles from the .dotfiles directory
