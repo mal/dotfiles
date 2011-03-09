@@ -102,11 +102,13 @@ for actual_dotfile in $dotfiles_loc/.*
 
 # take care of the .subversion/config file
 # -----------------------------------------------------------------
-actual_dotfile="$dotfiles_loc/config"
-dotfile="config"
-to_create="$HOME/.subversion/$dotfile"
-# actually create/remove the link
-linkDotfile $dotfile $to_create $actual_dotfile
+if [ -d $HOME/.subversion ]; then
+    actual_dotfile="$dotfiles_loc/config"
+    dotfile="config"
+    to_create="$HOME/.subversion/$dotfile"
+    # actually create/remove the link
+    linkDotfile $dotfile $to_create $actual_dotfile
+fi
 
 # NOTE: None of these files are under version control...
 # -----------------------------------------------------------------
