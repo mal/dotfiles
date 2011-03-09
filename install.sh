@@ -64,15 +64,27 @@ linkDotfile() {
     fi
 }
 
-# Catch update action, and update repos
+updateDotfiles() {
+    local vcs_update
+    cd $dotfiles_loc
+    if [ -f install.log ]; then
+        local previous=$(($(stat install.log -c %Y) / 86400))
+        local today=$(($(date +%s) / 86400))
+        [ $today -le $previous ] && return;
+    fi
+
+    if [ -d $dotfiles_loc/.git ] && [ `which git` ]; then
+        vcs_update="git pull"
+    elif [ -d $dotfiles_loc/.svn ] && [ `which svn` ]; then
+        vcs_update="svn up"
+    fi
+    echo $(date "+%a %b %0d %Y %H:%I:%S %Z"):  $($vcs_update) >> install.log
+}
+
+# Catch update action, and update the dotfiles from origin
 # -----------------------------------------------------------------
 if [ "$remove" = "update" ]; then
-    cd $dotfiles_loc
-    if [ -d $dotfiles_loc/.git ] && [ `which git` ]; then
-        echo git pull
-    elif [ -d $dotfiles_loc/.svn ] && [ `which svn` ]; then
-        echo svn up
-    fi
+    updateDotfiles
     exit 0
 fi
 
