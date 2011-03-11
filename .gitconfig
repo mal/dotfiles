@@ -1,4 +1,32 @@
-[http]
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore
 [user]
-	name = mal
-	email = madmalibu@gmail.com
+    name = Mal Graty
+    email = madmalibu@gmail.com
+[color]
+    ui = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    whitespace = red reverse
+    meta = yellow
+    old = red
+    new = green
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    dfs = diff --staged
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    lga = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --branches --remotes
+[github]
+    user = mal
