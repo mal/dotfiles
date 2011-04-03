@@ -56,33 +56,6 @@ color jellybeans
 " set leader
 let mapleader = ","
 
-" paste magic, add paste mode to the insert key
-fu InsertMap()
-    map! <insert> <c-o>:call InsertSwitch('m')<cr>
-endf
-
-" manage toggling of paste and insert modes
-fu InsertSwitch(mode)
-    if a:mode == 'a'
-        if v:insertmode == 'r'
-            iunmap <insert>
-        else
-            call InsertMap()
-        endif
-    endif
-    if a:mode != 'a' || &paste
-        set invpaste
-        set invnumber
-    endif
-    set paste?
-endf
-
-" map/hooks for paste magic
-call InsertMap()
-au insertchange * call InsertSwitch('a')
-
-" setup insert key hook
-map <insert> :call InsertSwitch('m')<cr>
 " take care of forgetting to use sudo with :w!!
 cmap w!! w !sudo tee % > /dev/null
 
