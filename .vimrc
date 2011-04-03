@@ -83,16 +83,20 @@ au insertchange * call InsertSwitch('a')
 
 " setup insert key hook
 map <insert> :call InsertSwitch('m')<cr>
-" deal with pesky windows eol-style
-noremap <leader>m mmHmt:%s/<c-v><cr>//ge<cr>'tzt'm:echo substitute(system("svn propset svn:eol-style native " . shellescape(expand('%'))), "\\n", "", "g")<cr>
-
 " take care of forgetting to use sudo with :w!!
 cmap w!! w !sudo tee % > /dev/null
 
 " show whitespace
-nmap <silent> <leader>s :set nolist!<CR>
-" edit vimrc
-nnoremap <leader>v <C-w>s<C-w>j<C-w>L:e ~/.vimrc<cr>
+nmap <silent> <leader>s :set list!<cr>
+" hide search results
+nmap <silent> <leader>/ :nohlsearch<cr>
+" edit/reload vimrc
+nmap <silent> <leader>ev <c-w>s<c-w>j<c-w>L:e $MYVIMRC<cr>
+nmap <silent> <leader>rv :so $MYVIMRC<cr>
+" avoid shift key
+nnoremap ; :
+" deal with pesky windows eol-style
+noremap <leader>m mmHmt:%s/<c-v><cr>//ge<cr>'tzt'm:echo substitute(system("svn propset svn:eol-style native " . shellescape(expand('%'))), "\\n", "", "g")<cr>
 
 " easy tabbing in visual mode
 vmap <tab> >gv
