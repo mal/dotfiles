@@ -56,15 +56,6 @@ color jellybeans
 " set leader
 let mapleader = ","
 
-" print message to vim's command line
-fu OutputMsg(msg)
-    let x=&ruler | let y=&showcmd
-    set noruler noshowcmd
-    redraw
-    echo strpart(a:msg, 0, &columns-1)
-    let &ruler=x | let &showcmd=y
-endf
-
 " paste magic, add paste mode to the insert key
 fu InsertMap()
     map! <insert> <c-o>:call InsertSwitch('m')<cr>
@@ -90,16 +81,10 @@ endf
 call InsertMap()
 au insertchange * call InsertSwitch('a')
 
-" make sure we never see weird line endings in this file again
-fu EolStyle()
-    let output = system("svn propset svn:eol-style native " . shellescape(expand('%')))
-    call OutputMsg(substitute(output, "\\n", "", "g"))
-endf
-
 " setup insert key hook
 map <insert> :call InsertSwitch('m')<cr>
 " deal with pesky windows eol-style
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm:call EolStyle()<cr>
+noremap <leader>m mmHmt:%s/<c-v><cr>//ge<cr>'tzt'm:echo substitute(system("svn propset svn:eol-style native " . shellescape(expand('%'))), "\\n", "", "g")<cr>
 
 " take care of forgetting to use sudo with :w!!
 cmap w!! w !sudo tee % > /dev/null
