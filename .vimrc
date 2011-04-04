@@ -83,5 +83,6 @@ au filetype python set tabstop=4 textwidth=79
 " easy commenting
 au filetype php,javascript,java,cpp vnoremap <buffer> / :s/^/\/\/ /<cr>:set nohlsearch<cr>gv
 au filetype php,javascript,java,cpp vnoremap <buffer> ? :s/^\s*\/\/ \?//<cr>:set nohlsearch<cr>gv
-au filetype sql                     vnoremap <buffer> / :s/^/-- /<cr>:set nohlsearch<cr>gv
-au filetype sql                     vnoremap <buffer> ? :s/^--\s\?//<cr>:set nohlsearch<cr>gv
+au filetype sql,plsql               vnoremap <buffer> / :s/^/-- /<cr>:set nohlsearch<cr>gv
+au filetype sql,plsql               vnoremap <buffer> ? :s/^--\s\?//<cr>:set nohlsearch<cr>gv
+au filetype sql,plsql               set shiftwidth=2 softtabstop=2 tabstop=2
