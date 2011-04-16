@@ -1,3 +1,14 @@
+# binds
+bindkey '\e[1~' beginning-of-line
+bindkey '\e[4~' end-of-line
+
+bindkey '\e[5~' history-beginning-search-backward
+bindkey '\e[6~' history-beginning-search-forward
+
+bindkey \^U backward-kill-line
+
+# prompt
+
 autoload -Uz vcs_info
 
 zstyle ':vcs_info:*' enable git svn
@@ -23,3 +34,9 @@ function precmd()
 PROMPT='
 %F{200}%n%f at %F{202}%m%f in %F{220}${PWD/#$HOME/~}%f${vcs_info_msg_0_}
 $(prompt) '
+
+# aliases
+
+alias ls='ls --color=always'
+alias ll='ls -l'
+alias la='ls -al'
