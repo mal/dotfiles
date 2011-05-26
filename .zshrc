@@ -1,4 +1,5 @@
 # binds
+
 bindkey '\e[1~' beginning-of-line
 bindkey '\e[4~' end-of-line
 
@@ -6,6 +7,23 @@ bindkey '\e[5~' history-beginning-search-backward
 bindkey '\e[6~' history-beginning-search-forward
 
 bindkey \^U backward-kill-line
+
+# history
+
+HISTSIZE=8192
+SAVEHIST=8192
+HISTFILE=~/.zhistory
+
+setopt append_history
+setopt hist_find_no_dups
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_no_functions
+setopt hist_no_store
+setopt hist_reduce_blanks
+setopt hist_save_no_dups
+setopt inc_append_history
+setopt share_history
 
 # prompt
 
