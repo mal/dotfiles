@@ -29,6 +29,7 @@ zstyle ':vcs_info:*' stagedstr '%F{28}●'
 zstyle ':vcs_info:*' unstagedstr '%F{11}●'
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' formats ' on %F{61}%b%c%u%f'
+zstyle ':vcs_info:*' actionformats ' on %F{61}%b%c%u%f op %F{59}%a%f'
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%f at %F{59}%r'
 
 setopt prompt_subst
