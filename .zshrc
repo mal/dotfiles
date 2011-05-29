@@ -1,12 +1,6 @@
 # binds
 
-bindkey '\e[1~' beginning-of-line
-bindkey '\e[4~' end-of-line
-
-bindkey '\e[5~' history-beginning-search-backward
-bindkey '\e[6~' history-beginning-search-forward
-
-bindkey \^U backward-kill-line
+eval "$(sed -n 's/^"/bindkey "/; s/history-search/history-beginning-search/; s/: / /p;' ~/.inputrc)"
 
 # history
 
