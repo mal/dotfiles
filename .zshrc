@@ -21,7 +21,8 @@ setopt share_history
 
 # prompt
 
-autoload -Uz vcs_info
+autoload -Uz promptinit vcs_info
+promptinit
 
 zstyle ':vcs_info:*' enable git svn
 zstyle ':vcs_info:*' stagedstr '%F{28}●'
@@ -38,10 +39,14 @@ function prompt()
     echo '%(0#.#.$)'
 }
 
-function precmd()
-{
-    vcs_info
-}
+add-zsh-hook precmd vcs_info
+
+case $TERM in
+  xterm*|rxvt*)
+    function title() { print -Pn "\e]0;%n@%m: ${PWD/#$HOME/~}\a" }
+    add-zsh-hook precmd title
+  ;;
+esac
 
 PROMPT='
 %F{200}%n%f at %F{202}%m%f in %F{220}${PWD/#$HOME/~}%f${vcs_info_msg_0_}
