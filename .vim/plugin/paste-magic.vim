@@ -1,8 +1,8 @@
 "
 " Paste Magic plugin for adding paste mode to the insert key
-" Maintainer: Mal Graty <madmalibu@gmail.com>
+" Author: Mal Graty <madmalibu@gmail.com>
 " Version: Vim 7 (may work with lower Vim versions, but not tested)
-" URL: http://github.com/mal/vim-paste-magic
+" URL: https://github.com/mal/dotfiles/blob/master/.vim/plugin/paste-magic.vim
 "
 " Only do this when not done yet for this buffer
 if exists("b:loaded_paste_magic_plugin")
