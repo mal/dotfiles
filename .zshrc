@@ -52,8 +52,3 @@ $(prompt) '
 alias ls='ls --color=always'
 alias ll='ls -l'
 alias la='ls -al'
-
-# env
-
-export EDITOR=vim
-export LANG=en_GB
