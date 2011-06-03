@@ -101,6 +101,15 @@ for actual_dotfile in $dotfiles_loc/.*
         fi
     done
 
+# allow for zsh shell using the same .profile
+# -----------------------------------------------------------------
+if [ `which zsh` ]; then
+    actual_dotfile="$dotfiles_loc/.profile"
+    dotfile=".zprofile"
+    to_create="$HOME/$dotfile"
+    linkDotfile $dotfile $to_create $actual_dotfile
+fi
+
 # take care of the .subversion/config file
 # -----------------------------------------------------------------
 if [ -d $HOME/.subversion ]; then
