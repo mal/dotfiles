@@ -9,3 +9,7 @@ fi
 # set editor
 VISUAL=vim
 EDITOR=vim
+
+if [ -f "$HOME/.localrc" ]; then
+    source $HOME/.localrc
+fi
