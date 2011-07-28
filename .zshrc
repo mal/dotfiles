@@ -52,9 +52,3 @@ esac
 PROMPT='
 %F{200}%n%f at %F{202}%m%f in %F{220}${PWD/#$HOME/~}%f${vcs_info_msg_0_}
 $(prompt) '
-
-# aliases
-
-alias ls='ls --color=always'
-alias ll='ls -l'
-alias la='ls -al'

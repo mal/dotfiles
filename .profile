@@ -10,6 +10,10 @@ fi
 VISUAL=vim
 EDITOR=vim
 
+if [ -f "$HOME/.aliases" ]; then
+    source $HOME/.aliases
+fi
+
 if [ -f "$HOME/.localrc" ]; then
     source $HOME/.localrc
 fi
