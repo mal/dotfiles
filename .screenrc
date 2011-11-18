@@ -1,1 +1,2 @@
-term screen-256color
+term $TERM
+termcapinfo xterm* is
