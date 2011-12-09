@@ -78,7 +78,7 @@ updateDotfiles() {
     elif [ -d $dotfiles_loc/.svn ] && [ `which svn` ]; then
         vcs_update="svn up"
     fi
-    echo $(date "+%a %b %0d %Y %H:%I:%S %Z"):  $($vcs_update) >> install.log
+    echo $(date "+%a %b %0d %Y %H:%I:%S %Z"):  $($vcs_update | head -n1) >> install.log
 }
 
 updateVimBundles() {
