@@ -1,6 +1,18 @@
 " abandon vi
 set nocompatible
 
+" configure vundle
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" bundles ahoy!
+Bundle 'gmarik/vundle'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'mal/pastemode.vim'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'pangloss/vim-javascript'
+
 " make windows use the unix path
 if has('win32') || has('win64')
   set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after

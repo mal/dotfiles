@@ -81,12 +81,25 @@ updateDotfiles() {
     echo $(date "+%a %b %0d %Y %H:%I:%S %Z"):  $($vcs_update) >> install.log
 }
 
+updateVimBundles() {
+    local update=0
+    if [ ! -f install.log ]; then
+        update=1
+    elif [ -z "$(tail -n1 install.log | grep 'up-to-date')" ]; then
+        update=1
+    fi
+    if [ $update -eq 1 ]; then
+        vim -c ':so ~/.vimrc' -c ':BundleInstall' -c ':qa'
+    fi
+}
+
 # Catch update action, and update the dotfiles from origin
 # -----------------------------------------------------------------
 if [ "$remove" = "update" ]; then
     if ! updateDotfiles; then
         exit 0
     fi
+    updateVimBundles
 fi
 
 # Links all the dotfiles from the .dotfiles directory
@@ -118,6 +131,11 @@ if [ -d $HOME/.subversion ]; then
     to_create="$HOME/.subversion/$dotfile"
     # actually create/remove the link
     linkDotfile $dotfile $to_create $actual_dotfile
+fi
+
+if [ "$remove" = "" -a ! -d $HOME/.vim/bundle/vundle ]; then
+    git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle > /dev/null 2>&1
+    updateVimBundles
 fi
 
 # NOTE: None of these files are under version control...
