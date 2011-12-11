@@ -1,5 +1,5 @@
 # run dotfile updater
-$HOME/.dotfiles/install.sh update
+$HOME/.dotfiles/manager.sh update
 
 # add private bin to path
 if [ -d "$HOME/bin" ]; then

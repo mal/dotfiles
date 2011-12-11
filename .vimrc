@@ -23,11 +23,11 @@ set autoindent
 set background=dark
 set backspace=indent,eol,start
 set backup
-set backupdir=~/.backup/vim/temp,.,/tmp
+set backupdir=~/.cache/temp,.,/tmp
 set backupskip=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*
 set binary
 set cursorline
-set directory=~/.backup/vim/swap,.,/tmp
+set directory=~/.cache/swap,.,/tmp
 set encoding=utf-8
 set expandtab
 set ttyfast
@@ -53,7 +53,7 @@ set tabstop=4
 " fancy undoness ready for natty
 if v:version >= 703
     set undofile
-    set undodir=~/.backup/vim/undo
+    set undodir=~/.cache/undo
 endif
 
 " mousey is here
@@ -63,7 +63,7 @@ endif
 
 " pretty colors
 syntax on
-color jellybeans
+sil! color jellybeans
 
 " set leader
 let mapleader = ","
