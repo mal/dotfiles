@@ -251,12 +251,8 @@ pull()
     # rerun when this script was updated
     if [ $before -ne $(stat "$0" -c %Y) ]
     then
-        if [ -z "$interact" ]
-        then
-            local y=' -y'
-        fi
-        log debug 'rerun' "with args: -v$verbosity$y repair"
-        $0 -v$verbosity$y repair
+        log debug 'rerun' "with args:$opts repair"
+        $0$opts repair
         log debug 'rerun' 'complete'
         exit
     fi
@@ -376,10 +372,11 @@ cd $dotfiles
 # default args
 interact=1
 cooldown=32399
+online=1
 verbosity=7
 
 # parse args
-while getopts c:fhv:y-: OPTION
+while getopts c:fhov:y-: OPTION
 do
     case $OPTION in
         c)
@@ -390,6 +387,9 @@ do
             ;;
         h)
             usage
+            ;;
+        o)
+            online=0
             ;;
         v)
             verbosity=$OPTARG
@@ -407,7 +407,7 @@ do
                     ;;
                 cooldown)
                     cooldown=${!OPTIND}
-                    OPTIND=$(( $OPTIND + 1 ))
+                    OPTIND=$(($OPTIND + 1))
                     ;;
                 force)
                     cooldown=0
@@ -415,18 +415,22 @@ do
                 help)
                     usage
                     ;;
+                offline)
+                    online=0
+                    ;;
                 verbosity=*)
                     verbosity=${OPTARG#*=}
                     ;;
                 verbosity)
                     verbosity=${!OPTIND}
-                    OPTIND=$(( $OPTIND + 1 ))
+                    OPTIND=$(($OPTIND + 1))
                     ;;
             esac
             ;;
     esac
+    opts="$opts -$OPTION$OPTARG"
 done
-shift $((OPTIND-1))
+shift $((OPTIND - 1))
 
 # parse command
 for command in "${commands[@]}" null
@@ -483,7 +487,7 @@ then
     command=install
 fi
 
-if [ "$command" = 'install' ]
+if [ "$command" = 'install' -a $online -eq 1 ]
 then
     pull
 fi
@@ -514,7 +518,7 @@ then
     fi
 fi
 
-if [ "$command" = 'install' ]
+if [ "$command" = 'install' -a $online -eq 1 ]
 then
     vundle
 fi
