@@ -228,7 +228,7 @@ pull()
     fi
 
     # pull from remote, capture first line
-    local line=$(echo "$(git pull)" | head -n1)
+    local line=$(git pull 2> /dev/null | cat | head -n1)
 
     if grep -iq '^updating' <<< $line
     then
