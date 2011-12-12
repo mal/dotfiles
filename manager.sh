@@ -346,7 +346,7 @@ vundle()
     # when cloned or .vimrc changed in the last 60 seconds, install bundles
     if [ $setup -eq 1 ] || recent "$dotfiles/.vimrc" 60
     then
-        vim -u "$dotfiles/.vimrc" -c ":BundleInstall" -c ':qa'
+        vim -u "$dotfiles/.vimrc" -c ':BundleClean!' -c ':BundleInstall' -c ':qa'
         log notice 'updated' "$bundle_r"
     else
         log debug 'skipped' "$bundle_r"
