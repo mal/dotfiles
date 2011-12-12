@@ -176,19 +176,19 @@ log()
             ;;
         error)
             local flag=1
-            local color="1;31"
+            local colour="1;31"
             ;;
         warning)
             local flag=2
-            local color="1;35"
+            local colour="1;35"
             ;;
         notice)
             local flag=4
-            local color="1;32"
+            local colour="1;32"
             ;;
         debug)
             local flag=8
-            local color="1;34"
+            local colour="1;34"
             ;;
         ?)
             return
@@ -208,7 +208,7 @@ log()
     fi
     shift 2
 
-    printf "\033[${color}m%-10s\033[m%s$nl" "$action:" "$*"
+    printf "\033[${colour}m%-10s\033[m%s$nl" "$action:" "$*"
 }
 
 pull()
