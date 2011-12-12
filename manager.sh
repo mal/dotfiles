@@ -1,5 +1,8 @@
 #! /usr/bin/env bash
 
+# function logic
+##########################################################################
+
 extra()
 {
     # name parameters
@@ -350,7 +353,8 @@ vundle()
     fi
 }
 
-# main() #####################################################################
+# initialisation logic
+##########################################################################
 
 # constants
 commands=( clean install remove repair update )
@@ -461,8 +465,10 @@ then
     log warning - 'cooldown must be a positive integer, defaulting to 9 hours' 1>&2
 fi
 
-# main() #####################################################################
+# execution logic
+##########################################################################
 
+# prevent unintentional reinstalls
 if [ "$command" = 'install' -a -f "$logfile" ]
 then
     log warning - 'already installed, try update'
