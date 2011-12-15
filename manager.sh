@@ -293,6 +293,19 @@ recent()
     fi
 }
 
+synched()
+{
+    # get installed and selected bundles
+    local repos=$(ls -1 "$dotfiles/.vim/bundle/" | sort)
+    local lines=$(sed -nr "s/^bundle '([^\/]+\/)?([^\/']+)'/\2/pi" "$dotfiles/.vimrc" | sort)
+
+    # do they match?
+    diff <(echo "$repos") <(echo "$lines") > /dev/null
+
+    # return answer
+    return $?
+}
+
 usage()
 {
     cat <<- EOF
@@ -333,18 +346,16 @@ vundle()
     local bundle_r="$(dirname "$vundle_r")"
 
     # install when not present
-    local setup=0
     if [ ! -d $vundle ]
     then
-        local setup=1
         git clone https://github.com/gmarik/vundle.git $vundle > /dev/null 2>&1
         log notice 'cloned' "$vundle_r"
     else
         log debug 'skipped' "$vundle_r"
     fi
 
-    # when cloned or .vimrc changed in the last 60 seconds, install bundles
-    if [ $setup -eq 1 ] || recent "$dotfiles/.vimrc" 60
+    # when installed and selected bundles don't match, update them
+    if ! synched
     then
         vim -u "$dotfiles/.vimrc" -c ':BundleClean!' -c ':BundleInstall' -c ':qa'
         log notice 'updated' "$bundle_r"
