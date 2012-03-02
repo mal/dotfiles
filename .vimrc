@@ -81,7 +81,7 @@ nmap <silent> <leader>rv :so $MYVIMRC<cr>
 " avoid shift key
 nnoremap ; :
 " deal with pesky windows eol-style
-noremap <leader>m mmHmt:%s/<c-v><cr>//ge<cr>'tzt'm:echo substitute(system("svn propset svn:eol-style native " . shellescape(expand('%'))), "\\n", "", "g")<cr>
+noremap <leader>m mmHmt:%s/<c-v><cr>//ge<cr>
 
 " easy tabbing in visual mode
 vmap <tab> >gv
