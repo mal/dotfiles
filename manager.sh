@@ -256,8 +256,9 @@ pull()
     then
         log debug 'rerun' "with args:$opts repair"
         $script$opts repair
+        local err=$?
         log debug 'rerun' 'complete'
-        exit
+        exit $err
     fi
 }
 
