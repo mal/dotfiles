@@ -343,7 +343,7 @@ vundle()
 
     # build readable name
     local vundle_r="$(format "$vundle")"
-    local bundle_r="$(dirname "$vundle_r")"
+    local bundle_r="$(format $(dirname "$vundle"))"
 
     # install when not present
     if [ ! -d $vundle ]
