@@ -9,7 +9,7 @@ call vundle#rc()
 " bundles ahoy!
 Bundle 'gmarik/vundle'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'mal/pastemode.vim'
+Bundle 'mal/vim-pastemode'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'pangloss/vim-javascript'
 
