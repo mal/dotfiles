@@ -217,7 +217,7 @@ log()
 pull()
 {
     # cache last edit of this script
-    local before=$(stat "$0" -c %Y)
+    local before=$(stat "$script" -c %Y)
 
     # note any local changes that get stashed
     local stashed=0
@@ -252,10 +252,10 @@ pull()
     fi
 
     # rerun when this script was updated
-    if [ $before -ne $(stat "$0" -c %Y) ]
+    if [ $before -ne $(stat "$script" -c %Y) ]
     then
         log debug 'rerun' "with args:$opts repair"
-        $0$opts repair
+        $script$opts repair
         log debug 'rerun' 'complete'
         exit
     fi
@@ -309,7 +309,7 @@ synched()
 usage()
 {
     cat <<- EOF
-		Usage: $0 [-vlevel] [-y] command
+		Usage: $(basename $script) [-vlevel] [-y] command
 
 		Manages dotfiles and settings from this repo for the current user
 
@@ -373,6 +373,7 @@ exclude=( . .. .git )
 
 # runtime constants
 dotfiles=$(cd "$(dirname $0)" && pwd)
+script="$dotfiles/$(basename $0)"
 logfile="$dotfiles/manager.log"
 excfile="$dotfiles/.git/info/exclude"
 
