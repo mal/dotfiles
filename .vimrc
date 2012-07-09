@@ -79,11 +79,14 @@ au insertleave * :set relativenumber
 nmap <silent> <leader>s :set list!<cr>
 " hide search results
 nmap <silent> <leader>/ :nohlsearch<cr>
+
 " edit/reload vimrc
 nmap <silent> <leader>ev <c-w>s<c-w>j<c-w>L:e $MYVIMRC<cr>
 nmap <silent> <leader>rv :so $MYVIMRC<cr>
+
 " avoid shift key
 nnoremap ; :
+
 " deal with pesky windows eol-style
 noremap <leader>m mmHmt:%s/<c-v><cr>//ge<cr>
 
