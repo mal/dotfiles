@@ -40,7 +40,7 @@ set ignorecase
 set lazyredraw
 set listchars=tab:>-,trail:·,eol:$
 set nomodeline
-set number
+set relativenumber
 set ruler
 set shell=sh
 set shiftwidth=4
@@ -70,6 +70,10 @@ let mapleader = ","
 
 " take care of forgetting to use sudo with :w!!
 cmap w!! w !sudo tee % > /dev/null
+
+" use relative line numbers in command mode
+au insertenter * :set number
+au insertleave * :set relativenumber
 
 " show whitespace
 nmap <silent> <leader>s :set list!<cr>
