@@ -97,6 +97,12 @@ vmap <s-tab> <gv
 vnoremap < <gv
 vnoremap > >gv
 
+" open some windows
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 " time to put up or shut up
 inoremap <up> <nop>
 inoremap <down> <nop>
