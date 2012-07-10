@@ -121,6 +121,9 @@ nmap <silent> <leader>/ :nohlsearch<cr>
 " show whitespace
 nmap <silent> <leader>s :set list!<cr>
 
+" nuke whitespace
+nmap <silent> <leader>S :%s/\s\+$//g<cr>
+
 " edit/reload vimrc
 nmap <silent> <leader>ev <c-w>s<c-w>j<c-w>L:e $MYVIMRC<cr>
 nmap <silent> <leader>rv :so $MYVIMRC<cr>
