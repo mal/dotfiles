@@ -49,7 +49,6 @@ set scrolloff=3
 set shell=sh
 set shiftwidth=4
 set showcmd
-set showmatch
 set smartcase
 set smartindent
 set softtabstop=4
@@ -99,19 +98,23 @@ vnoremap < <gv
 vnoremap > >gv
 
 " time to put up or shut up
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
 inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+vnoremap <up> <nop>
+vnoremap <down> <nop>
+vnoremap <left> <nop>
+vnoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 
 " take me to your leader
-let mapleader = ","
+let mapleader = ','
 
 " deal with pesky windows eol-style
 noremap <leader>m mmHmt:%s/<c-v><cr>//ge<cr>
