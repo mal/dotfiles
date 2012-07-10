@@ -1,0 +1,7 @@
+if [ -f "$HOME/.aliasrc" ]; then
+    source $HOME/.aliasrc
+fi
+
+if [ -f "$HOME/.localrc" ]; then
+    source $HOME/.localrc
+fi

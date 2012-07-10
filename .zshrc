@@ -52,3 +52,6 @@ esac
 PROMPT='
 %F{200}%n%f at %F{202}%m%f in %F{220}${PWD/#$HOME/~}%f${vcs_info_msg_0_}
 $(prompt) '
+
+# common
+. $HOME/.commonrc

@@ -1,4 +1,4 @@
-ARGS='-I --color=auto --exclude-dir=.svn --exclude-dir=.git'
+ARGS='-I --color=auto --exclude-dir=.git'
 alias grep="grep $ARGS"
 alias fgrep="fgrep $ARGS"
 alias egrep="egrep $ARGS"
