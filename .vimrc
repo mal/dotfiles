@@ -12,6 +12,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'mal/vim-pastemode'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'pangloss/vim-javascript'
+Bundle 'tpope/vim-surround'
 
 " make windows use the unix path
 if has('win32') || has('win64')
