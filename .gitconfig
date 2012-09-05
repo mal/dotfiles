@@ -1,9 +1,26 @@
 [core]
     editor = vim
     excludesfile = ~/.gitignore
+[github]
+    user = mal
+[push]
+    default = tracking
+[rerere]
+    enabled = 1
 [user]
     name = Mal Graty
     email = mal.graty@googlemail.com
+
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    dfs = diff --staged
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lga = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --branches --remotes
+
 [color]
     ui = auto
 [color "branch"]
@@ -19,16 +36,3 @@
     added = yellow
     changed = green
     untracked = cyan
-[rerere]
-	enabled = 1
-[alias]
-    st = status
-    ci = commit
-    br = branch
-    co = checkout
-    df = diff
-    dfs = diff --staged
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    lga = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --branches --remotes
-[github]
-    user = mal
