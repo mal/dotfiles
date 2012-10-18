@@ -132,15 +132,23 @@ nmap <silent> <leader>/ :nohlsearch<cr>
 nmap <silent> <leader>s :set list!<cr>
 
 " nuke whitespace
-nmap <silent> <leader>S :%s/\s\+$//g<cr>
+nmap <silent> <leader>S :%s/\s\+$//<cr>
+
+" retab
+nmap <silent> <leader>r :set et<cr>:%s/\v%(^\s*)@<=\t/    /<cr>
+
+" inverse retab
+nmap <silent> <leader>R :set noet<cr>:%s/\v%(^\s*)@<= {4}/\t/<cr>
 
 " edit/reload vimrc
-nmap <silent> <leader>ev <c-w>s<c-w>j<c-w>L:e $MYVIMRC<cr>
-nmap <silent> <leader>rv :so $MYVIMRC<cr>
+nmap <silent> <leader>ve <c-w>s<c-w>j<c-w>L:e $MYVIMRC<cr>
+nmap <silent> <leader>vr :so $MYVIMRC<cr>
 
 " easy commenting
 au filetype php,javascript,java,cpp vnoremap <buffer> / :s/^/\/\/ /<cr>:set nohlsearch<cr>gv
 au filetype php,javascript,java,cpp vnoremap <buffer> ? :s/^\s*\/\/ \?//<cr>:set nohlsearch<cr>gv
+au filetype coffee                  vnoremap <buffer> / :s/^/# /<cr>:set nohlsearch<cr>gv
+au filetype coffee                  vnoremap <buffer> ? :s/^\s*# \?//<cr>:set nohlsearch<cr>gv
 au filetype sql,plsql               vnoremap <buffer> / :s/^/-- /<cr>:set nohlsearch<cr>gv
 au filetype sql,plsql               vnoremap <buffer> ? :s/^--\s\?//<cr>:set nohlsearch<cr>gv
 au filetype sql,plsql               set shiftwidth=2 softtabstop=2 tabstop=2
