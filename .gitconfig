@@ -4,7 +4,7 @@
 [github]
     user = mal
 [push]
-    default = tracking
+    default = upstream
 [rerere]
     enabled = 1
 [user]
