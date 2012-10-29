@@ -12,7 +12,7 @@
     email = mal.graty@googlemail.com
 
 [alias]
-    st = status
+    st = status -sb
     ci = commit
     br = branch
     co = checkout
