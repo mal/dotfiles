@@ -43,7 +43,7 @@ set incsearch
 set lazyredraw
 set listchars=tab:>-,trail:·,eol:$
 set nomodeline
-set relativenumber
+set number
 set ruler
 set scrolloff=3
 set shell=sh
@@ -69,10 +69,6 @@ endif
 " pretty colors
 syntax on
 sil! color jellybeans
-
-" use relative line numbers in command mode
-au insertenter * :set number
-au insertleave * :set relativenumber
 
 " take care of forgetting to use sudo with :w!!
 cmap w!! w !sudo tee % > /dev/null
