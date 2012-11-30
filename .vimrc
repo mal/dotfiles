@@ -63,7 +63,7 @@ set wrap
 
 " mousey is here
 if has('mouse')
-    set mouse=a
+  set mouse=a
 endif
 
 " pretty colors
@@ -145,10 +145,16 @@ nmap <silent> <leader>ve <c-w>s<c-w>j<c-w>L:e $MYVIMRC<cr>
 nmap <silent> <leader>vr :so $MYVIMRC<cr>
 
 " easy commenting
-au filetype php,javascript,java,cpp vnoremap <buffer> / :s/^/\/\/ /<cr>:set nohlsearch<cr>gv
-au filetype php,javascript,java,cpp vnoremap <buffer> ? :s/^\s*\/\/ \?//<cr>:set nohlsearch<cr>gv
-au filetype coffee                  vnoremap <buffer> / :s/^/# /<cr>:set nohlsearch<cr>gv
-au filetype coffee                  vnoremap <buffer> ? :s/^\s*# \?//<cr>:set nohlsearch<cr>gv
-au filetype sql,plsql               vnoremap <buffer> / :s/^/-- /<cr>:set nohlsearch<cr>gv
-au filetype sql,plsql               vnoremap <buffer> ? :s/^--\s\?//<cr>:set nohlsearch<cr>gv
-au filetype sql,plsql               set shiftwidth=2 softtabstop=2 tabstop=2
+func s:comments(pattern)
+  exe 'vnoremap <buffer> / :s/^/' . a:pattern . ' /<cr>:set nohlsearch<cr>gv'
+  exe 'vnoremap <buffer> ? :s/^' . a:pattern . '\s\?//<cr>:set nohlsearch<cr>gv'
+endf
+
+" filetype comments
+au filetype coffee,rb,sh call s:comments('#')
+au filetype php,javascript,java,cpp call s:comments('\/\/')
+au filetype sql,plsql call s:comments('--')
+au filetype vim call s:comments('"')
+
+" filetype idents
+au filetype rb,sh,sql,plsql,vim set sw=2 sts=2 ts=2
