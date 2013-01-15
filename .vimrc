@@ -147,10 +147,11 @@ func s:comments(pattern)
 endf
 
 " filetype comments
-au filetype coffee,rb,sh call s:comments('#')
+au filetype coffee,ruby,sh call s:comments('#')
 au filetype php,javascript,java,cpp call s:comments('\/\/')
 au filetype sql,plsql call s:comments('--')
 au filetype vim call s:comments('"')
 
 " filetype idents
-au filetype rb,sh,sql,plsql,vim set sw=2 sts=2 ts=2
+au filetype ruby,sh,sql,plsql,vim set sw=2 sts=2 ts=2
+au filetype make set sw=8 sts=8 ts=8
