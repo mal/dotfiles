@@ -7,6 +7,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " bundles ahoy!
+Bundle 'evanmiller/nginx-vim-syntax'
 Bundle 'gmarik/vundle'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mal/vim-pastemode'
