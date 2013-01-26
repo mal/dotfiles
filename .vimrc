@@ -147,9 +147,11 @@ func s:comments(pattern)
   exe 'vnoremap <buffer> ? :s/^' . a:pattern . '\s\?//<cr>:set nohlsearch<cr>gv'
 endf
 
+" default comments
+call s:comments('#')
+
 " filetype comments
-au filetype coffee,ruby,sh call s:comments('#')
-au filetype php,javascript,java,cpp call s:comments('\/\/')
+au filetype javascript,java,cpp call s:comments('\/\/')
 au filetype sql,plsql call s:comments('--')
 au filetype vim call s:comments('"')
 
