@@ -9,6 +9,7 @@ SAVEHIST=8192
 HISTFILE=~/.zhistory
 
 setopt append_history
+setopt completeinword
 setopt hist_find_no_dups
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
