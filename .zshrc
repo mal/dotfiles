@@ -18,6 +18,10 @@ setopt hist_reduce_blanks
 setopt hist_save_no_dups
 setopt inc_append_history
 setopt share_history
+setopt vi
+
+zle -A .backward-kill-word vi-backward-kill-word
+zle -A .backward-delete-char vi-backward-delete-char
 
 # prompt
 
