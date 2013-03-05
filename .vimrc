@@ -156,5 +156,5 @@ au filetype sql,plsql call s:comments('--')
 au filetype vim call s:comments('"')
 
 " filetype idents
-au filetype ruby,sh,sql,plsql,vim set sw=2 sts=2 ts=2
+au filetype coffee,plsql,ruby,sh,sql,vim set sw=2 sts=2 ts=2
 au filetype make set sw=8 sts=8 ts=8
