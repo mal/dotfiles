@@ -74,10 +74,6 @@ sil! color jellybeans
 " take care of forgetting to use sudo with :w!!
 cmap w!! w !sudo tee % > /dev/null
 
-" magic search
-nnoremap / /\v
-vnoremap / /\v
-
 " bracket navigation
 nnoremap <tab> %
 vnoremap <tab> %
