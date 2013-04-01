@@ -55,7 +55,7 @@ set softtabstop=4
 set tabstop=4
 set textwidth=79
 set ttyfast
-set undodir=~/.cache/undo
+set undodir=~/.cache/undo,.,/tmp
 set undofile
 set wildmenu
 set wildmode=list:longest,full
