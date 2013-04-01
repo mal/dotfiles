@@ -61,6 +61,10 @@ set wildmenu
 set wildmode=list:longest,full
 set wrap
 
+" gui options
+set gfn=monaco:h12,consolas:h13
+set go=iMr
+
 " mousey is here
 if has('mouse')
   set mouse=a
