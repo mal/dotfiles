@@ -152,6 +152,8 @@ endf
 call s:comments('#')
 
 " filetype comments
+au filetype autohotkey
+  \ call s:comments(';')
 au filetype javascript,java,cpp
   \ call s:comments('\/\/')
 au filetype sql,plsql
@@ -160,7 +162,7 @@ au filetype vim
   \ call s:comments('"')
 
 " filetype idents
-au filetype coffee,plsql,ruby,sh,sql,vim
+au filetype autohotkey,coffee,plsql,ruby,sh,sql,vim
   \ set sw=2 sts=2 ts=2
 au filetype make
   \ set sw=8 sts=8 ts=8
