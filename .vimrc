@@ -141,19 +141,26 @@ nmap <silent> <leader>ve <c-w>s<c-w>j<c-w>L:e $MYVIMRC<cr>
 nmap <silent> <leader>vr :so $MYVIMRC<cr>
 
 " easy commenting
-func s:comments(pattern)
-  exe 'vnoremap <buffer> / :s/^/' . a:pattern . ' /<cr>:set nohlsearch<cr>gv'
-  exe 'vnoremap <buffer> ? :s/^' . a:pattern . '\s\?//<cr>:set nohlsearch<cr>gv'
+func! s:comments(pattern)
+  exe 'vnoremap <buffer> / ' .
+    \ ':s/^/' . a:pattern . ' /<cr>:set nohlsearch<cr>gv'
+  exe 'vnoremap <buffer> ? ' .
+    \ ':s/^' . a:pattern . '\s\?//<cr>:set nohlsearch<cr>gv'
 endf
 
 " default comments
 call s:comments('#')
 
 " filetype comments
-au filetype javascript,java,cpp call s:comments('\/\/')
-au filetype sql,plsql call s:comments('--')
-au filetype vim call s:comments('"')
+au filetype javascript,java,cpp
+  \ call s:comments('\/\/')
+au filetype sql,plsql
+  \ call s:comments('--')
+au filetype vim
+  \ call s:comments('"')
 
 " filetype idents
-au filetype coffee,plsql,ruby,sh,sql,vim set sw=2 sts=2 ts=2
-au filetype make set sw=8 sts=8 ts=8
+au filetype coffee,plsql,ruby,sh,sql,vim
+  \ set sw=2 sts=2 ts=2
+au filetype make
+  \ set sw=8 sts=8 ts=8
