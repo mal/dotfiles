@@ -1,6 +1,11 @@
 " abandon vi
 set nocompatible
 
+" make windows use the unix path
+if has('win32') || has('win64')
+  set rtp=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+endif
+
 " configure vundle
 filetype off
 set rtp+=~/.vim/bundle/vundle/
@@ -15,11 +20,6 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-surround'
 
-" make windows use the unix path
-if has('win32') || has('win64')
-  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
-endif
-
 " main options
 set autoindent
 set background=dark
@@ -27,13 +27,12 @@ set backspace=indent,eol,start
 set backup
 set backupdir=~/.cache/temp,.,/tmp
 set backupskip=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*
-set binary
 set colorcolumn=85
 set cursorline
 set directory=~/.cache/swap,.,/tmp
 set encoding=utf-8
 set expandtab
-set fileformat=unix
+set fileformats=unix,dos
 set formatoptions=qrn1
 set gdefault
 set hidden
