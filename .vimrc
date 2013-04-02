@@ -41,7 +41,7 @@ set hlsearch
 set ignorecase
 set incsearch
 set lazyredraw
-set listchars=tab:>-,trail:·,eol:$
+set listchars=eol:$,nbsp:¬,tab:>-,trail:·
 set nomodeline
 set number
 set ruler
