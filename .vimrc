@@ -18,6 +18,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'mal/vim-pastemode'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'pangloss/vim-javascript'
+Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 
 " main options
