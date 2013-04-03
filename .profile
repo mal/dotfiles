@@ -1,6 +1,3 @@
-# set 256 colour terminal
-export TERM=xterm-256color
-
 # run dotfile updater
 bash $HOME/.dotfiles/manager.sh update
 
