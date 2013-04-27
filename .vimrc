@@ -53,6 +53,8 @@ set showcmd
 set smartcase
 set smartindent
 set softtabstop=4
+set splitbelow
+set splitright
 set tabstop=4
 set textwidth=79
 set ttyfast
