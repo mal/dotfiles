@@ -2,6 +2,10 @@ if [ -n "$COLORTERM" -a "${TERM%-256color}" = "$TERM" ]
     then TERM=$TERM-256color
 fi
 
-if [ -f "$HOME/.localrc" ]; then
-    source $HOME/.localrc
+if [ -f "$HOME/.aliasrc" ]
+    then source $HOME/.aliasrc
+fi
+
+if [ -f "$HOME/.localrc" ]
+    then source $HOME/.localrc
 fi
