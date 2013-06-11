@@ -168,4 +168,4 @@ au filetype vim
 au filetype autohotkey,coffee,plsql,ruby,sh,sql,vim
   \ set sw=2 sts=2 ts=2
 au filetype make
-  \ set sw=8 sts=8 ts=8
+  \ set noet sw=8 sts=8 ts=8
