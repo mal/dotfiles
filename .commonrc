@@ -6,6 +6,10 @@ if [ -f "$HOME/.aliasrc" ]
     then source $HOME/.aliasrc
 fi
 
+if [ -d "$HOME/.common.d" ]
+    then source $HOME/.common.d/*
+fi
+
 if [ -f "$HOME/.localrc" ]
     then source $HOME/.localrc
 fi
