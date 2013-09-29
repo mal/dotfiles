@@ -96,8 +96,8 @@ nnoremap ; :
 inoremap jj <ESC>
 
 " easy tabbing in visual mode
-vmap <tab> >gv
-vmap <s-tab> <gv
+vmap <tab> >
+vmap <s-tab> <
 vnoremap < <gv
 vnoremap > >gv
 
