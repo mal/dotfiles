@@ -6,7 +6,7 @@
 [push]
     default = upstream
 [rerere]
-    enabled = 1
+    enabled = true
 [user]
     name = Mal Graty
     email = mal.graty@googlemail.com
