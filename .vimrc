@@ -81,6 +81,10 @@ sil! color jellybeans
 " take care of forgetting to use sudo with :w!!
 cmap w!! w !sudo tee % > /dev/null
 
+" search history
+cmap <pageup> <up>
+cmap <pagedown> <down>
+
 " bracket navigation
 nnoremap <tab> %
 vnoremap <tab> %
