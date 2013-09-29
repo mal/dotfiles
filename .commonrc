@@ -3,13 +3,13 @@ if [ -n "$COLORTERM" -a "${TERM%-256color}" = "$TERM" ]
 fi
 
 if [ -f "$HOME/.aliasrc" ]
-    then source $HOME/.aliasrc
+    then . $HOME/.aliasrc
 fi
 
 if [ -d "$HOME/.common.d" ]
-    then source $HOME/.common.d/*
+    then for src in $HOME/.common.d/*; do . $src; done
 fi
 
 if [ -f "$HOME/.localrc" ]
-    then source $HOME/.localrc
+    then . $HOME/.localrc
 fi
