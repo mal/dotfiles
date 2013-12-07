@@ -162,7 +162,7 @@ call s:comments('#')
 " filetype comments
 au filetype autohotkey
   \ call s:comments(';')
-au filetype javascript,java,cpp
+au filetype javascript,java,cpp,scss
   \ call s:comments('\/\/')
 au filetype sql,plsql
   \ call s:comments('--')
