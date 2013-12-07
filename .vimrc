@@ -79,7 +79,7 @@ syntax on
 sil! color jellybeans
 
 " take care of forgetting to use sudo with :w!!
-cmap w!! w !sudo tee % > /dev/null
+cmap w!! sil exec 'w !sudo tee ' . shellescape(@%, 1) . ' > /dev/null' \| sil e!
 
 " search history
 cmap <pageup> <up>
