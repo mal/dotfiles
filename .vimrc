@@ -29,7 +29,7 @@ set backspace=indent,eol,start
 set backup
 set backupdir=~/.cache/temp,.,/tmp
 set backupskip=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*
-set colorcolumn=85
+set colorcolumn=80
 set cursorline
 set directory=~/.cache/swap,.,/tmp
 set encoding=utf-8
@@ -57,7 +57,7 @@ set softtabstop=4
 set splitbelow
 set splitright
 set tabstop=4
-set textwidth=79
+set textwidth=72
 set ttyfast
 set undodir=~/.cache/undo,.,/tmp
 set undofile
