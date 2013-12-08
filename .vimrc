@@ -19,6 +19,7 @@ Bundle 'mal/vim-pastemode'
 Bundle 'mmalecki/vim-node.js'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'pangloss/vim-javascript'
+Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 
