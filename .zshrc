@@ -48,7 +48,7 @@ function prompt()
 add-zsh-hook precmd vcs_info
 
 case $TERM in
-  xterm*|rxvt*)
+  putty*|rxvt*|xterm*)
     function title() { print -Pn "\e]0;%n@%m: ${PWD/#$HOME/~}\a" }
     add-zsh-hook precmd title
   ;;
