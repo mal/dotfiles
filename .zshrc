@@ -4,8 +4,8 @@ eval "$(sed -n 's/^"/bindkey "/; s/history-search/history-beginning-search/; s/:
 
 # history
 
-HISTSIZE=8192
-SAVEHIST=8192
+HISTSIZE=16384
+SAVEHIST=16384
 HISTFILE=~/.zhistory
 
 setopt append_history
