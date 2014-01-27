@@ -1,7 +1,3 @@
-# binds
-
-eval "$(sed -n 's/^"/bindkey "/; s/history-search/history-beginning-search/; s/: / /p;' ~/.inputrc)"
-
 # history
 
 HISTSIZE=16384
@@ -19,10 +15,21 @@ setopt hist_reduce_blanks
 setopt hist_save_no_dups
 setopt inc_append_history
 setopt share_history
-setopt vi
 
-zle -A .backward-kill-word vi-backward-kill-word
+# vi mode
+
+setopt vi
+bindkey -v
+
 zle -A .backward-delete-char vi-backward-delete-char
+zle -A .backward-kill-word vi-backward-kill-word
+
+# binds
+
+zle -A .history-beginning-search-backward history-search-backward
+zle -A .history-beginning-search-forward history-search-forward
+
+eval "$(sed -n 's/^"/bindkey "/; s/: / /; /^bindkey/p' ~/.inputrc)"
 
 # prompt
 
