@@ -14,6 +14,7 @@ call vundle#rc()
 " bundles ahoy!
 Bundle 'evanmiller/nginx-vim-syntax'
 Bundle 'gmarik/vundle'
+Bundle 'guns/vim-clojure-static'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mal/vim-pastemode'
 Bundle 'mmalecki/vim-node.js'
@@ -161,7 +162,7 @@ endf
 call s:comments('#')
 
 " filetype comments
-au filetype autohotkey
+au filetype autohotkey,clojure
   \ call s:comments(';')
 au filetype javascript,java,cpp,scss
   \ call s:comments('\/\/')
@@ -171,7 +172,7 @@ au filetype vim
   \ call s:comments('"')
 
 " filetype idents
-au filetype autohotkey,coffee,plsql,ruby,sh,sql,vim
+au filetype autohotkey,clojure,coffee,plsql,ruby,sh,sql,vim
   \ set sw=2 sts=2 ts=2
 au filetype make
   \ set noet sw=8 sts=8 ts=8
