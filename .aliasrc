@@ -1,8 +1,3 @@
-ARGS='-I --color=auto --exclude-dir=.git'
-alias grep="grep $ARGS"
-alias fgrep="fgrep $ARGS"
-alias egrep="egrep $ARGS"
-
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias la='ll -A'
