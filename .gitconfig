@@ -5,6 +5,8 @@
     user = mal
 [push]
     default = upstream
+[rebase]
+    autosquash = true
 [rerere]
     enabled = true
 [user]
@@ -12,12 +14,13 @@
     email = mal.graty@googlemail.com
 
 [alias]
-    st = status -sb
-    ci = commit
     br = branch
+    ci = commit
     co = checkout
     df = diff
     dfs = diff --staged
+    st = status -sb
+
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --date-order
     lga = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --date-order --branches --remotes
 
