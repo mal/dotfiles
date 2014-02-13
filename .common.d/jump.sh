@@ -13,7 +13,7 @@ jmp() {
 
     if [ -n "$dir" ]
         then cd "$(dirname "$dir")"
-        else echo "err: unknown jump" >&2
+        else echo "err: unknown jump" >&2; return 1
     fi
 }
 
