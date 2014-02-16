@@ -32,6 +32,7 @@ set backspace=indent,eol,start
 set backup
 set backupdir=~/.cache/temp,.,/tmp
 set backupskip=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*
+set clipboard=unnamedplus,unnamed
 set colorcolumn=80
 set cursorline
 set directory=~/.cache/swap,.,/tmp
