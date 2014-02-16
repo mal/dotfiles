@@ -23,6 +23,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
+Bundle 'zaiste/tmux.vim'
 
 " main options
 set autoindent
@@ -61,6 +62,7 @@ set splitright
 set tabstop=4
 set textwidth=72
 set ttyfast
+set ttymouse=xterm2
 set undodir=~/.cache/undo,.,/tmp
 set undofile
 set wildmenu
