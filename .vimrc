@@ -166,9 +166,9 @@ call s:comments('#')
 " filetype comments
 au filetype autohotkey,clojure
   \ call s:comments(';')
-au filetype javascript,java,cpp,scss
+au filetype c,cpp,java,javascript,scss
   \ call s:comments('\/\/')
-au filetype sql,plsql
+au filetype plsql,sql
   \ call s:comments('--')
 au filetype vim
   \ call s:comments('"')
