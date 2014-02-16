@@ -129,7 +129,7 @@ nnoremap j gj
 nnoremap k gk
 
 " take me to your leader
-let mapleader = ','
+let mapleader = '\'
 
 " deal with pesky windows eol-style
 noremap <leader>m mmHmt:%s/<c-v><cr>//ge<cr>
