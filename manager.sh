@@ -517,6 +517,11 @@ then
     command=install
 fi
 
+if [ "$command" = 'install' -a ! -d $dotfiles/.vim ]
+then
+    mkdir $dotfiles/.vim
+fi
+
 if [ "$command" != 'clean' ]
 then
     for file in $dotfiles/.*
