@@ -534,12 +534,6 @@ then
     then
         link "$dotfiles/.profile" "$HOME/.zprofile"
     fi
-
-    # enable svn support
-    if [ -d "$HOME/.subversion" ]
-    then
-        link "$dotfiles/config" "$HOME/.subversion"
-    fi
 fi
 
 if [ "$command" = 'install' -a $online -eq 1 ]
