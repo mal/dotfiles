@@ -43,5 +43,6 @@ _jmp_search() {
     find "$@"
 }
 
-
-compctl -x 'p[1]' -K _jmp_completion -- jmp
+if type compctl &> /dev/null
+  then compctl -x 'p[1]' -K _jmp_completion -- jmp
+fi
