@@ -107,12 +107,6 @@ vmap <s-tab> <
 vnoremap < <gv
 vnoremap > >gv
 
-" open some windows
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
 " time to put up or shut up
 inoremap <up> <nop>
 inoremap <down> <nop>
@@ -176,7 +170,7 @@ au filetype vim
   \ call s:comments('"')
 
 " filetype idents
-au filetype autohotkey,clojure,coffee,plsql,ruby,sh,sql,vim
+au filetype autohotkey,clojure,coffee,plsql,ruby,scss,sh,sql,vim
   \ set sw=2 sts=2 ts=2
 au filetype make
   \ set noet sw=8 sts=8 ts=8
