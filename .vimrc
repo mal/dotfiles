@@ -4,6 +4,7 @@ set nocompatible
 " make windows use the unix path
 if has('win32') || has('win64')
   set rtp=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+  set nowritebackup
 endif
 
 " configure vundle
