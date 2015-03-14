@@ -169,10 +169,10 @@ au filetype plsql,sql
 au filetype vim
   \ call s:comments('"')
 
-" filetype idents
+" filetype tweaks
 au filetype autohotkey,clojure,coffee,plsql,ruby,scss,sh,sql,vim
-  \ set sw=2 sts=2 ts=2
+  \ setl sw=2 sts=2 ts=2
 au filetype make
-  \ set noet sw=8 sts=8 ts=8
+  \ setl noet sw=8 sts=8 ts=8
 au filetype markdown
-  \ set tw=79
+  \ setl tw=79
