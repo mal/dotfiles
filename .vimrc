@@ -157,7 +157,8 @@ func! s:comments(pattern)
 endf
 
 " default comments
-call s:comments('#')
+au filetype *
+  \ call s:comments('#')
 
 " filetype comments
 au filetype autohotkey,clojure
