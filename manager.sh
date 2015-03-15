@@ -528,6 +528,11 @@ then
     do
         link "$file" "$HOME"
     done
+
+    if [ "$command" = 'remove' ] || which bash > /dev/null
+    then
+        link "$dotfiles/.profile" "$HOME/.bash_profile"
+    fi
     
     # enable zsh support
     if [ "$command" = 'remove' ] || which zsh > /dev/null
