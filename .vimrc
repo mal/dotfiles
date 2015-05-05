@@ -13,6 +13,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " bundles ahoy!
+Bundle 'elzr/vim-json'
 Bundle 'evanmiller/nginx-vim-syntax'
 Bundle 'gmarik/vundle'
 Bundle 'guns/vim-clojure-static'
