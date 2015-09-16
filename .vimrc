@@ -16,6 +16,7 @@ call vundle#rc()
 Bundle 'elzr/vim-json'
 Bundle 'evanmiller/nginx-vim-syntax'
 Bundle 'gmarik/vundle'
+Bundle 'godlygeek/tabular'
 Bundle 'guns/vim-clojure-static'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mal/vim-pastemode'
