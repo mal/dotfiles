@@ -14,6 +14,7 @@ setopt hist_no_store
 setopt hist_reduce_blanks
 setopt hist_save_no_dups
 setopt inc_append_history
+setopt interactivecomments
 setopt share_history
 
 # vi mode
