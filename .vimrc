@@ -56,14 +56,14 @@ set number
 set ruler
 set scrolloff=3
 set shell=sh
-set shiftwidth=4
+set shiftwidth=2
 set showcmd
 set smartcase
 set smartindent
-set softtabstop=4
+set softtabstop=2
 set splitbelow
 set splitright
-set tabstop=4
+set tabstop=2
 set textwidth=72
 set ttyfast
 set ttymouse=xterm2
@@ -165,7 +165,7 @@ au filetype *
 " filetype comments
 au filetype autohotkey,clojure
   \ call s:comments(';')
-au filetype c,cpp,java,javascript,html,scss
+au filetype c,cpp,go,java,javascript,html,scss
   \ call s:comments('\/\/')
 au filetype plsql,sql
   \ call s:comments('--')
@@ -173,9 +173,11 @@ au filetype vim
   \ call s:comments('"')
 
 " filetype tweaks
-au filetype autohotkey,clojure,coffee,plsql,ruby,scss,sh,sql,vim
-  \ setl sw=2 sts=2 ts=2
+au filetype c,cpp,go,java,php,python
+  \ setl sw=4 sts=4 ts=4
 au filetype make
-  \ setl noet sw=8 sts=8 ts=8
+  \ setl sw=8 sts=8 ts=8
+au filetype go,make
+  \ setl noet
 au filetype markdown
   \ setl tw=79
