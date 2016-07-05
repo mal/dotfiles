@@ -62,8 +62,12 @@ case $TERM in
   ;;
 esac
 
+PROMPT_USER_COLOUR=200
+PROMPT_HOST_COLOUR=202
+PROMPT_PATH_COLOUR=220
+
 PROMPT='
-%F{200}%n%f at %F{202}%m%f in %F{220}${PWD/#$HOME/~}%f${vcs_info_msg_0_}
+%F{$PROMPT_USER_COLOUR}%n%f at %F{$PROMPT_HOST_COLOUR}%m%f in %F{$PROMPT_PATH_COLOUR}${PWD/#$HOME/~}%f${vcs_info_msg_0_}
 $(prompt) '
 
 # common
