@@ -167,7 +167,7 @@ au filetype autohotkey,clojure
   \ call s:comments(';')
 au filetype c,cpp,go,java,javascript,html,scss
   \ call s:comments('\/\/')
-au filetype plsql,sql
+au filetype lua,plsql,sql
   \ call s:comments('--')
 au filetype vim
   \ call s:comments('"')
@@ -179,5 +179,5 @@ au filetype make
   \ setl sw=8 sts=8 ts=8
 au filetype go,make
   \ setl noet
-au filetype markdown
+au filetype markdown,yaml
   \ setl tw=79
