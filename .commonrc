@@ -1,3 +1,5 @@
+#!/bin/sh
+
 if [ -n "$COLORTERM" -a "${TERM%-256color}" = "$TERM" ]
     then TERM=$TERM-256color
 fi
