@@ -1,3 +1,5 @@
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias la='ll -A'
+
+alias jsonfmt='json_pp --json_opt=canonical,indent,space_after,utf8 | sed "s/^\( \+\)\1\1/\1\1/"'
