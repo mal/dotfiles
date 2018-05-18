@@ -143,10 +143,10 @@ nmap <silent> <leader>s :set list!<cr>
 nmap <silent> <leader>S :%s/\s\+$//<cr>
 
 " retab
-nmap <silent> <leader>r :set et<cr>:%s/\v%(^\s*)@<=\t/    /<cr>
+nmap <silent> <leader>r :set et<cr>:%s/\v%(^\s*)@<=\t/  /<cr>
 
 " inverse retab
-nmap <silent> <leader>R :set noet<cr>:%s/\v%(^\s*)@<= {4}/\t/<cr>
+nmap <silent> <leader>R :set noet<cr>:%s/\v%(^\s*)@<= {2}/\t/<cr>
 
 " edit/reload vimrc
 nmap <silent> <leader>ve <c-w>s<c-w>j<c-w>L:e $MYVIMRC<cr>
