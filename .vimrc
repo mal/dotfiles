@@ -13,6 +13,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " bundles ahoy!
+Bundle 'derekwyatt/vim-scala'
 Bundle 'elzr/vim-json'
 Bundle 'evanmiller/nginx-vim-syntax'
 Bundle 'gmarik/vundle'
@@ -165,7 +166,7 @@ au filetype *
 " filetype comments
 au filetype autohotkey,clojure
   \ call s:comments(';')
-au filetype c,cpp,go,java,javascript,html,scss
+au filetype c,cpp,go,java,javascript,html,scala,scss
   \ call s:comments('\/\/')
 au filetype lua,plsql,sql
   \ call s:comments('--')
