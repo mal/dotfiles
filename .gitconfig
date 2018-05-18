@@ -9,6 +9,7 @@
     autosquash = true
 [rerere]
     enabled = true
+    autoupdate = true
 [user]
     name = Mal Graty
     email = mal.graty@googlemail.com
