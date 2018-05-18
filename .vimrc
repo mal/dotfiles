@@ -27,6 +27,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
+Bundle 'vim-ruby/vim-ruby'
 Bundle 'zaiste/tmux.vim'
 
 " main options
