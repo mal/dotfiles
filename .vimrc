@@ -15,7 +15,6 @@ call vundle#rc()
 " bundles ahoy!
 Bundle 'derekwyatt/vim-scala'
 Bundle 'elzr/vim-json'
-Bundle 'evanmiller/nginx-vim-syntax'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'guns/vim-clojure-static'
