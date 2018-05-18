@@ -183,3 +183,6 @@ au filetype go,make
   \ setl noet
 au filetype markdown,yaml
   \ setl tw=79
+
+" posix syntax
+let is_posix=1
