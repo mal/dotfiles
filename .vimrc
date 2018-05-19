@@ -9,25 +9,35 @@ endif
 
 " configure vundle
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/vundle.vim/
+call vundle#begin()
 
-" bundles ahoy!
-Bundle 'derekwyatt/vim-scala'
-Bundle 'elzr/vim-json'
-Bundle 'gmarik/vundle'
-Bundle 'godlygeek/tabular'
-Bundle 'guns/vim-clojure-static'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'mal/vim-pastemode'
-Bundle 'mmalecki/vim-node.js'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'zaiste/tmux.vim'
+" vundle
+Plugin 'vundlevim/vundle.vim'
+
+" functional plugins
+Plugin 'godlygeek/tabular'
+Plugin 'mal/vim-pastemode'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+
+" syntax plugins
+Plugin 'derekwyatt/vim-scala'
+Plugin 'elzr/vim-json'
+Plugin 'guns/vim-clojure-static'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'mmalecki/vim-node.js'
+Plugin 'pangloss/vim-javascript'
+Plugin 'tpope/vim-markdown'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'zaiste/tmux.vim'
+
+" color schemes
+Plugin 'nanotech/jellybeans.vim'
+
+" load plugins
+call vundle#end()
+filetype plugin indent on
 
 " main options
 set autoindent
