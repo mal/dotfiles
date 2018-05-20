@@ -11,7 +11,7 @@ sync()
 {
   if ! insync_sym; then
     comm -23z $sym/actual $sym/expect \
-      | cut -d: -f1 -z | xargs -0r rm -vf
+      | cut -d: -f1 -z | xargs -0r rm -fv
     comm -13z $sym/actual $sym/expect \
       | cut -d: -f2 -z | xargs -0r -n1 ln -sv | sed "s:^'./:linked  ':"
   fi
@@ -28,7 +28,7 @@ reset()
     | awk '$1 == "Removing" { print "removed \x27" $2 "\x27" }'
 
   insync_sym
-  cat $sym/actual | cut -d: -f1 -z | xargs -0r rm -vf
+  cat $sym/actual | cut -d: -f1 -z | xargs -0r rm -fv
 }
 
 check()
