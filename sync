@@ -17,7 +17,9 @@ sync()
   fi
 
   if ! insync_vim; then
+    test -t 1 && printf "syncing '.vim/bundle/' ..."
     vim +PluginClean! +PluginInstall +qa -esu "$dot/.vimrc"
+    test -t 1 && printf '\r\e[K'
     echo "synced  '.vim/bundle/'"
   fi
 }
