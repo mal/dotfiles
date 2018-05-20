@@ -17,10 +17,10 @@ sync()
   fi
 
   if ! insync_vim; then
-    test -t 1 && printf "syncing '.vim/bundle/' ..."
+    test -t 1 && printf '%s' "syncing '.vim/bundle/' ..."
     vim +PluginClean! +PluginInstall +qa -esu "$dot/.vimrc"
     test -t 1 && printf '\r\e[K'
-    echo "synced  '.vim/bundle/'"
+    printf '%s\n' "synced  '.vim/bundle/'"
   fi
 }
 
@@ -67,5 +67,5 @@ insync_vim()
 cmd="${1:-sync}"
 case "$cmd" in
   check|reset|sync) $cmd ;;
-  *) echo 'invalid subcommand'; exit 1 ;;
+  *) printf '%s\n' 'invalid subcommand'; exit 1 ;;
 esac
