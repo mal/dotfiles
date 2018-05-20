@@ -1,0 +1,69 @@
+#!/bin/sh
+
+dot="$(cd "$0/.." && pwd)"
+tmp=$(mktemp -d); trap "rm -r $tmp" EXIT
+sym=$tmp/sym
+vim=$tmp/vim
+
+cd "$HOME"
+
+sync()
+{
+  if ! insync_sym; then
+    comm -23z $sym/actual $sym/expect \
+      | cut -d: -f1 -z | xargs -0r rm -vf
+    comm -13z $sym/actual $sym/expect \
+      | cut -d: -f2 -z | xargs -0r -n1 ln -sv | sed "s:^'./:linked  ':"
+  fi
+
+  if ! insync_vim; then
+    vim +PluginClean! +PluginInstall +qa -esu "$dot/.vimrc"
+    echo "synced  '.vim/bundle/'"
+  fi
+}
+
+reset()
+{
+  git -C "$dot" clean -dffX .vim/bundle \
+    | awk '$1 == "Removing" { print "removed \x27" $2 "\x27" }'
+
+  insync_sym
+  cat $sym/actual | cut -d: -f1 -z | xargs -0r rm -vf
+}
+
+check()
+{
+  insync_sym && insync_vim
+}
+
+insync_sym()
+{
+  mkdir $sym
+
+  find . -mindepth 1 -prune \
+    -type l -lname '.dotfiles/*' \
+    -printf '%f:%l\0' | sort -z > $sym/actual
+  find "${dot#$HOME/}" -mindepth 1 -prune \
+    \( -name '.*' ! -name '.git*' -o -name .gitconfig \) \
+    -printf '%f:%p\0' | sort -z > $sym/expect
+
+  diff $sym/actual $sym/expect > /dev/null
+}
+
+insync_vim()
+{
+  mkdir $vim
+
+  vim +PluginList +%p +qa -esu "$dot/.vimrc" \
+    | awk -F "[/']" '$3 { print $3 }' | sort > $vim/expect
+  find "$dot/.vim/bundle" -mindepth 1 -prune \
+    -type d -printf '%f\n' | sort > $vim/actual
+
+  diff $vim/actual $vim/expect > /dev/null
+}
+
+cmd="${1:-sync}"
+case "$cmd" in
+  check|reset|sync) $cmd ;;
+  *) echo 'invalid subcommand'; exit 1 ;;
+esac

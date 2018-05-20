@@ -1,5 +1,5 @@
 # run dotfile updater
-bash $HOME/.dotfiles/manager.sh update
+$(dirname "$(readlink -f "$0")")/sync
 
 # add private bin to path
 if [ -d "$HOME/bin" ]; then
