@@ -54,6 +54,7 @@ insync_sym()
 
 insync_vim()
 {
+  which vim > /dev/null || return 0
   mkdir $vim
 
   vim +PluginList +%p +qa -esu "$dot/.vimrc" \
