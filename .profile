@@ -1,5 +1,5 @@
 # run dotfile updater
-$(dirname "$(readlink -f "$0")")/sync
+$(dirname "$(readlink -f "$HOME/.profile")")/sync
 
 # add private bin to path
 if [ -d "$HOME/bin" ]; then
