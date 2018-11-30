@@ -2,6 +2,7 @@
 
 dot="$(cd "$0/.." && pwd)"
 tmp=$(mktemp -d); trap "rm -r $tmp" EXIT
+dir=$tmp/dir
 sym=$tmp/sym
 vim=$tmp/vim
 
@@ -9,6 +10,11 @@ cd "$HOME"
 
 sync()
 {
+  if ! insync_dir; then
+    comm -13z $dir/actual $dir/expect \
+      | xargs -0r -n1 mkdir -pv | sed "s:^.\+ ':created ':"
+  fi
+
   if ! insync_sym; then
     comm -23z $sym/actual $sym/expect \
       | cut -d: -f1 -z | xargs -0r rm -fv
@@ -35,7 +41,20 @@ reset()
 
 check()
 {
-  insync_sym && insync_vim
+  insync_dir && insync_sym && insync_vim
+}
+
+insync_dir()
+{
+  which vim > /dev/null || return 0
+  mkdir $dir
+
+  for sub in swap temp undo; do printf %s\\0 .cache/vim/$sub; done \
+    | sort -z > $dir/expect
+  find .cache/vim -maxdepth 1 -mindepth 1 -type d -print0 2> /dev/null \
+    | sort -z > $dir/actual
+
+  diff $dir/actual $dir/expect > /dev/null
 }
 
 insync_sym()

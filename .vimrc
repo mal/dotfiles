@@ -44,12 +44,12 @@ set autoindent
 set background=dark
 set backspace=indent,eol,start
 set backup
-set backupdir=~/.cache/temp,.,/tmp
+set backupdir=~/.cache/vim/temp,.,/tmp
 set backupskip=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*
 set clipboard=unnamed
 set colorcolumn=80
 set cursorline
-set directory=~/.cache/swap,.,/tmp
+set directory=~/.cache/vim/swap,.,/tmp
 set encoding=utf-8
 set expandtab
 set fileformats=unix,dos
@@ -79,7 +79,7 @@ set tabstop=2
 set textwidth=72
 set ttyfast
 set ttymouse=xterm2
-set undodir=~/.cache/undo,.,/tmp
+set undodir=~/.cache/vim/undo,.,/tmp
 set undofile
 set wildmenu
 set wildmode=list:longest,full
