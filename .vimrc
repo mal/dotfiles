@@ -44,6 +44,7 @@ set autoindent
 set background=dark
 set backspace=indent,eol,start
 set backup
+set backupcopy=yes
 set backupdir=~/.cache/vim/temp,.,/tmp
 set backupskip=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*
 set clipboard=unnamed
