@@ -1,48 +1,55 @@
 [core]
-    editor = vim
-    excludesfile = ~/.gitignore
-[github]
-    user = mal
-[push]
-    default = upstream
-[rebase]
-    autosquash = true
-[rerere]
-    enabled = true
-    autoupdate = true
-[user]
-    name = Mal Graty
-    email = mal.graty@googlemail.com
+	editor = vim
+	excludesfile = ~/.gitignore
+
 
 [alias]
-    br = branch
-    ci = commit
-    co = checkout
-    df = diff
-    dfs = diff --staged
-    pr = pull --rebase
-    st = status -sb
-
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --date-order
-    lga = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --date-order --branches --remotes
+	br = branch
+	ci = commit
+	co = checkout
+	df = diff
+	dfs = diff --staged
+	pr = pull --rebase
+	st = status -sb
+	lg = log --abbrev-commit --date-order --date=relative --graph --pretty=plus
+	lga = !git lg --branches --remotes
 
 [color]
-    ui = auto
+	ui = auto
 [color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "decorate"]
+	remoteBranch = yellow
 [color "diff"]
-    whitespace = red reverse
-    meta = yellow
-    old = red
-    new = green
+	whitespace = red reverse
+	meta = yellow
+	old = red
+	new = green
 [color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
+	added = yellow
+	changed = green
+	untracked = cyan
 
 [diff]
 	tool = vimdiff
 [difftool]
 	prompt = false
+
+[pretty]
+	plus = %C(red)%h%C(reset) -%C(auto)%d %s %C(green)(%ar) %C(blue bold)<%an>
+
+[push]
+	default = upstream
+
+[rebase]
+	autosquash = true
+
+[rerere]
+	enabled = true
+	autoupdate = true
+
+[user]
+	name = Mal Graty
+	email = mal.graty@googlemail.com
