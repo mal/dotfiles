@@ -179,7 +179,7 @@ au filetype *
 " filetype comments
 au filetype autohotkey,clojure
   \ call s:comments(';')
-au filetype c,cpp,go,java,javascript,html,scala,scss
+au filetype c,cpp,go,java,javascript,html,sbt,scala,scss
   \ call s:comments('\/\/')
 au filetype lua,plsql,sql
   \ call s:comments('--')
