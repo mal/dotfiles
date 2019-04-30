@@ -22,6 +22,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 
 " syntax plugins
+Plugin 'chaimleib/vim-renpy'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'elzr/vim-json'
 Plugin 'guns/vim-clojure-static'
@@ -186,7 +187,7 @@ au filetype vim
   \ call s:comments('"')
 
 " filetype tweaks
-au filetype c,cpp,go,java,php,python
+au filetype c,cpp,go,java,php,python,renpy
   \ setl sw=4 sts=4 ts=4
 au filetype make
   \ setl sw=8 sts=8 ts=8
