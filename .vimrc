@@ -199,8 +199,10 @@ au filetype make
   \ setl sw=8 sts=8 ts=8
 au filetype go,make
   \ setl noet
-au filetype markdown,yaml
+au filetype markdown,text,yaml
   \ setl tw=79
+au filetype changelog,gitcommit,markdown,text
+  \ setl spell
 
 " posix syntax
 let is_posix=1
