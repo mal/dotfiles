@@ -9,7 +9,7 @@
 	co = checkout
 	df = diff
 	dfs = diff --staged
-	pr = pull --rebase
+	pr = pull --autostash --rebase
 	st = status -sb
 	lg = log --abbrev-commit --date-order --date=relative --graph --pretty=plus
 	lga = !git lg --branches --remotes
