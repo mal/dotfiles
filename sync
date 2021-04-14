@@ -5,6 +5,7 @@ tmp=$(mktemp -d); trap "rm -r $tmp" EXIT
 dir=$tmp/dir
 sym=$tmp/sym
 vim=$tmp/vim
+git="$(for cfg in attributes config; do echo "-o -name .git$cfg"; done)"
 
 cd "$HOME"
 
@@ -65,7 +66,7 @@ insync_sym()
     -type l -lname "${dot#$HOME/}/*" \
     -printf '%f:%l\0' | sort -z > $sym/actual
   find "${dot#$HOME/}" -mindepth 1 -prune \
-    \( -name '.*' ! -name '.git*' -o -name .gitconfig \) \
+    \( -name '.*' ! -name '.git*' $git \) \
     -printf '%f:%p\0' | sort -z > $sym/expect
 
   diff $sym/actual $sym/expect > /dev/null
