@@ -74,7 +74,6 @@ set shell=sh
 set shiftwidth=2
 set showcmd
 set smartcase
-set smartindent
 set softtabstop=2
 set splitbelow
 set splitright
