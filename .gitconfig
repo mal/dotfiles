@@ -1,7 +1,7 @@
 [core]
+	attributesfile = ~/.gitattributes
 	editor = vim
 	excludesfile = ~/.gitignore
-
 
 [alias]
 	br = branch
@@ -36,6 +36,9 @@
 	tool = vimdiff
 [difftool]
 	prompt = false
+[diff "gz"]
+	binary = true
+	textconv = gunzip --stdout
 
 [pretty]
 	plus = %C(red)%h%C(reset) -%C(auto)%d %s %C(green)(%ar) %C(blue bold)<%an>
