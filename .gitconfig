@@ -34,11 +34,12 @@
 
 [diff]
 	tool = vimdiff
-[difftool]
-	prompt = false
 [diff "gz"]
 	binary = true
 	textconv = gunzip --stdout
+
+[difftool]
+	prompt = false
 
 [pretty]
 	plus = %C(red)%h%C(reset) -%C(auto)%d %s %C(green)(%ar) %C(blue bold)<%an>
