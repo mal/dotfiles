@@ -161,9 +161,9 @@ nmap <silent> <leader>r :set et<cr>:%s/\v%(^\s*)@<=\t/  /<cr>
 nmap <silent> <leader>R :set noet<cr>:%s/\v%(^\s*)@<= {2}/\t/<cr>
 
 " inline sort
-vnoremap gsc d:execute 'normal i' .
+vnoremap gsc y:execute "normal gvc" .
   \ join(sort(split(getreg('"'), '\s*,\s*')), ', ')<cr>
-vnoremap gsv d:execute 'normal i' .
+vnoremap gsv y:execute "normal gvc" .
   \ join(sort(split(getreg('"'))), ' ')<cr>
 
 " edit/reload vimrc
