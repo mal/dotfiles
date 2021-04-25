@@ -41,6 +41,12 @@
 [difftool]
 	prompt = false
 
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
 [pretty]
 	plus = %C(red)%h%C(reset) -%C(auto)%d %s %C(green)(%ar) %C(blue bold)<%an>
 
