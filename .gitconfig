@@ -13,6 +13,8 @@
 	st = status -sb
 	lg = log --abbrev-commit --date-order --date=relative --graph --pretty=plus
 	lga = !git lg --branches --remotes
+	rv = diff
+	rvs = !git rv --staged
 
 [color]
 	ui = auto
@@ -27,6 +29,11 @@
 	meta = yellow
 	old = red
 	new = green
+[color "diff-highlight"]
+	oldhighlight = 9 235 bold
+	oldnormal = 9
+	newhighlight = green 235 bold
+	newnormal = green
 [color "status"]
 	added = yellow
 	changed = green
@@ -46,6 +53,10 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+[pager]
+	rv = /usr/bin/perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight \
+		| less
 
 [pretty]
 	plus = %C(red)%h%C(reset) -%C(auto)%d %s %C(green)(%ar) %C(blue bold)<%an>
