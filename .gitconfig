@@ -43,7 +43,7 @@
 	tool = vimdiff
 [diff "gz"]
 	binary = true
-	textconv = gunzip --stdout
+	textconv = "f() { file -b $1; echo ---; gunzip -c $1; }; f"
 
 [difftool]
 	prompt = false
