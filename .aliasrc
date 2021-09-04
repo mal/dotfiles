@@ -1,4 +1,4 @@
-alias ls='ls --color=auto'
+alias ls='env LANG=C ls --color=auto'
 alias ll='ls -l'
 alias la='ll -A'
 
