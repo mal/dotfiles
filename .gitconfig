@@ -54,6 +54,9 @@
 	process = git-lfs filter-process
 	required = true
 
+[init]
+	defaultBranch = main
+
 [pager]
 	rv = /usr/bin/perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight \
 		| less
