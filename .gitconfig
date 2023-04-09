@@ -48,6 +48,7 @@
 	untracked = cyan
 
 [diff]
+	renameLimit = 5120
 	tool = vimdiff
 [diff "gz"]
 	binary = true
