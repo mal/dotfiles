@@ -1,4 +1,5 @@
 TIMEFMT="
-real	%E
+real	%*E
 sys	%S
-user	%U"
+user	%U
+mem	%M MiB"
