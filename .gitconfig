@@ -15,6 +15,14 @@
 	lga = !git lg --branches --remotes
 	rv = diff
 	rvs = !git rv --staged
+	bl = !git for-each-ref --color=always --sort=committerdate --format=' \
+			%(color:yellow)%(refname:short)%(color:reset) \
+			%(color:red)%(objectname:short)%(color:reset) \
+			%(contents:subject) \
+			%(authorname) \
+			(%(color:green)%(committerdate:relative)%(color:reset)) \
+		' refs/heads/ \
+		| sed -e 's/    /\\t/g' -e 's/\\s\\+$//' | column -ts '\t'
 
 [color]
 	ui = auto
@@ -58,6 +66,7 @@
 	defaultBranch = main
 
 [pager]
+	bl = less -ERSX
 	rv = /usr/bin/perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight \
 		| less
 
