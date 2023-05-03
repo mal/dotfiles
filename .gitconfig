@@ -22,7 +22,7 @@
 			%(authorname) \
 			(%(color:green)%(committerdate:relative)%(color:reset)) \
 		' refs/heads/ \
-		| sed -e 's/    /\\t/g' -e 's/\\s\\+$//' | column -ts '\t'
+		| sed -e 's/    /\\t/g' -e 's/^\\s\\+\\|\\s\\+$//g' | column -ts '\t'
 
 [color]
 	ui = auto
