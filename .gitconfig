@@ -12,9 +12,9 @@
 	pr = pull --autostash --rebase
 	st = status -sb
 	lg = log --abbrev-commit --date-order --date=relative --graph --pretty=plus
-	lga = !git lg --branches --remotes
+	lga = lg --branches --remotes
 	rv = diff
-	rvs = !git rv --staged
+	rvs = rv --staged
 	bl = !git for-each-ref --color=always --sort=committerdate --format=' \
 			%(color:yellow)%(refname:short)%(color:reset) \
 			%(color:red)%(objectname:short)%(color:reset) \
