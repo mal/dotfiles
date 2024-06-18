@@ -23,6 +23,9 @@
 			(%(color:green)%(committerdate:relative)%(color:reset)) \
 		' refs/heads/ \
 		| sed -e 's/    /\\t/g' -e 's/^\\s\\+\\|\\s\\+$//g' | column -ts '\t'
+	rb = -c rebase.instructionFormat=' \
+			%s%nexec GIT_COMMITTER_DATE=\"%cD\" git commit --amend --no-edit' \
+		rebase -i
 
 [color]
 	ui = auto
