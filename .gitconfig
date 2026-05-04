@@ -63,6 +63,9 @@
 [diff "gz"]
 	binary = true
 	textconv = "f() { file -b $1; echo ---; gunzip -c $1; }; f"
+[diff "hd"]
+	binary = true
+	textconv = "f() { file -b $1; echo ---; hexdump $1; }; f"
 
 [difftool]
 	prompt = false
