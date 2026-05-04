@@ -3,6 +3,9 @@
 	editor = vim
 	excludesfile = ~/.gitignore
 
+[advice]
+	skippedCherryPicks = false
+
 [alias]
 	br = branch
 	ci = commit
