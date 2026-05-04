@@ -9,6 +9,7 @@
 	co = checkout
 	df = diff
 	dfs = diff --staged
+	fixup = commit --fixup
 	pr = pull --autostash --rebase
 	st = status -sb
 	lg = log --abbrev-commit --date-order --date=relative --graph --pretty=plus
@@ -23,8 +24,11 @@
 			(%(color:green)%(committerdate:relative)%(color:reset)) \
 		' refs/heads/ \
 		| sed -e 's/    /\\t/g' -e 's/^\\s\\+\\|\\s\\+$//g' | column -ts '\t'
-	rb = -c rebase.instructionFormat=' \
-			%s%nexec GIT_COMMITTER_DATE=\"%cD\" git commit --amend --no-edit' \
+	rb = -c rebase.instructionFormat='%s%nexec \
+			GIT_COMMITTER_NAME=\"%cn\" \
+			GIT_COMMITTER_EMAIL=\"%ce\" \
+			GIT_COMMITTER_DATE=\"%cD\" \
+			git commit --amend --no-edit' \
 		rebase -i
 
 [color]
